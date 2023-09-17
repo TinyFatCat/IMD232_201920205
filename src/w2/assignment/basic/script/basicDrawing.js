@@ -1,6 +1,9 @@
 function setup() {
-  setCanvasContainer('p5-canvas', 3, 1, true);
+  // setCanvasContainer('p5-canvas', 3, 1, true);
+  createCanvas(windowWidth, windowHeight / 1.5);
   background('white');
+  console.log(width);
+  console.log(height);
 }
 
 function draw() {
@@ -168,4 +171,8 @@ function draw() {
   rect(98, 325, 145, 1000);
   fill('#40321f');
   ellipse(105, 350, 32, 32);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight / 1.5);
 }
