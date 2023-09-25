@@ -44,8 +44,10 @@ function mouseTrack() {
   if (mouse.y < pos.y || mouse.y > pos.y) {
     vel.add(0, (follow.y * 0.01) / 10);
   }
+  stroke('black');
   line(mouseX, mouseY, pos.x, pos.y);
 }
+
 //공에 필요한 애니메이션들을 함수화하면 수백 개도 금세 만들 수 있음.
 
 //과제는 써놓은 그대로, 마우스를 쫒아 등가속 운동하는 원...

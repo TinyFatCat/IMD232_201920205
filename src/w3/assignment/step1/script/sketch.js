@@ -22,11 +22,7 @@ function draw() {
   mouseTrack();
   infiniteEdge();
   display();
-}
-
-function display() {
-  fill('black');
-  ellipse(pos.x, pos.y, 2 * radius);
+  displayVector();
 }
 
 function update() {
@@ -35,6 +31,11 @@ function update() {
   vel.add(acc);
   vel.limit(5);
   pos.add(vel);
+}
+
+function display() {
+  fill('black');
+  ellipse(pos.x, pos.y, 2 * radius);
 }
 
 function infiniteEdge() {
@@ -57,6 +58,13 @@ function mouseTrack() {
   stroke('black');
   strokeWeight(2);
   line(mouseX, mouseY, pos.x, pos.y);
+}
+
+function displayVector() {
+  stroke('red');
+  line(pos.x, pos.y, pos.x + vel.x * 10, pos.y + vel.y * 10);
+  stroke('blue');
+  line(pos.x, pos.y, pos.x + acc.x * 100, pos.y + acc.y * 100);
 }
 
 //공에 필요한 애니메이션들을 함수화하면 수백 개도 금세 만들 수 있음.
