@@ -1,4 +1,9 @@
 let ball;
+let ball2;
+let gravity;
+let wind;
+let att;
+
 function setup() {
   setCanvasContainer('mySketchGoesHere', 3, 2, true);
   ball = new Mover(width / 3, 0, 10);
@@ -18,7 +23,7 @@ function draw() {
   //   ball2.applyForce(wind);
   // }
   ball.applyForce(att.attract(ball));
-  ball.applyForce(att.attract(ball2));
+  ball2.applyForce(att.attract(ball2));
   ball.update();
   ball2.update();
   // ball.edgeBounce();
@@ -27,7 +32,7 @@ function draw() {
   fill('white');
   ball.display();
   ball2.display();
-  display();
+  att.display();
 }
 
 // 모든 사물이 받는 '중력 가속도'는 똑같다. 중력이 똑같은 건
